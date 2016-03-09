@@ -45,12 +45,13 @@ Estranhamente, mesmo tendo diminuído pela metade os números conferidos, o temp
 
 **Etapa 5: Gprof**
 
-Com um único arquivo: **T comp** - real 0m0.080s | **T exec** - real 0m1.737s - executado com valor inicial de 100000
-Com dois arquivos: **T comp** - real 0m0.111s | **T exec** - real 0m1.730s - executado com valor inicial de 100000
+Em ambos os casos, a função primo foi a parte que gastou mais tempo, praticamente o tempo inteiro.
 
 **Etapa 6: Paralelização**
 
 A possível paralelização no código seria no laço do for.
+Com um único arquivo: **T comp** - real 0m0.074s | **T exec** - real 0m963s - executado com valor inicial de 100000
+Com dois arquivos: **T comp** - real 0m0.101s | **T exec** - real 0m0.962s - executado com valor inicial de 100000
 
 **Etapa 7: Otimização**
 
