@@ -4,10 +4,10 @@
 
 O grupo D utilizou computadores com as seguintes especificações, serão representados na respectiva ordem:
 
-1.Intel(R) Core(TM)2 Quad CPU    Q8400  @ 2.66GHz
-2.Intel(R) Core(TM)2 Quad CPU    Q8400  @ 2.66GHz, Memory 4GB
-3.Intel(R) Core(TM) i5-2450M @ 2.5GHZ; Memory 6GB
-4.Intel(R) Core(TM) i7-4750HQ CPU @ 2.00GHz; Memory 8 GB 1600 MHz DDR3; Mac OS X El Capitan (version 10.11.4)
+1. Intel(R) Core(TM)2 Quad CPU    Q8400  @ 2.66GHz
+2. Intel(R) Core(TM)2 Quad CPU    Q8400  @ 2.66GHz, Memory 4GB
+3. Intel(R) Core(TM) i5-2450M @ 2.5GHZ; Memory 6GB
+4. Intel(R) Core(TM) i7-4750HQ CPU @ 2.00GHz; Memory 8 GB 1600 MHz DDR3; Mac OS X El Capitan (version 10.11.4)
 
 Os programas utilizados para detectar benchmark foram:
 
