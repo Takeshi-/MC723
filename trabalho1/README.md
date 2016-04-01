@@ -2,12 +2,16 @@
 
 #Relatório do Projeto 1 Parte 3
 
-O grupo D utilizou computadores com as seguintes especificações, serão representados na respectiva ordem:
+O grupo D utilizou computadores com as seguintes especificações, serão representados na respectiva ordem, computadores 1-4 grupo D, computadores 5-6 grupo E e computadores 7-8 grupo F:
 
 1. Intel(R) Core(TM)2 Quad CPU    Q8400  @ 2.66GHz
 2. Intel(R) Core(TM)2 Quad CPU    Q8400  @ 2.66GHz, Memory 4GB
 3. Intel(R) Core(TM) i5-2450M @ 2.5GHZ; Memory 6GB
 4. Intel(R) Core(TM) i7-4750HQ CPU @ 2.00GHz; Memory 8 GB 1600 MHz DDR3; Mac OS X El Capitan (version 10.11.4)
+5. Intel® Core™ i7-3612QM CPU @ 2.10GHz × 8; Memory 8GB, SSD Kingston 240GB V300 Sata III;  Ubuntu 15.04 
+6. Intel® Core™2 Quad CPU Q8400 @ 2.66GHz × 4 Intel® Q45/Q43, 3.8GB RAM
+7. Intel(R) Core(TM) i7-2670QM CPU @ 2.20GHz x4, 8GB DDR 1333Mhz ,Ubuntu 14.04LTS 32bits,HDD: SAMSUNG HN-M101MBB / 5400 RPM/ Sata III
+8. Raspberry Pi, 900MHz quad-core ARM Cortex-A7 CPU, 1GB RAM, 32GB SD Card
 
 Os programas utilizados para detectar benchmark foram:
 
@@ -16,12 +20,26 @@ Os programas utilizados para detectar benchmark foram:
 * Tcc - tempo de acesso ao disco e memória
 * Fftw - tempo de execução de operações matemáticas pelo processador
 
+####Grupo D
 A partir desses programas pode-se perceber que o computador 3 é aquele com o melhor desempenho, seguido do computador 2 e finalmente o computador 1 .
 
-Independente de qual benchmark foi utilizado o computador 3 teve uma medição de tempo menor que os computadors 1 e 2 .
+Independente de qual benchmark foi utilizado o computador 3 teve uma medição de tempo menor que os computadores 1 e 2 .
 Infelizmente o computador 4 não utilizou outros benchmarks para comparação, além do fftw. 
 Com isso podemos apenas dizer que o computador 4 é melhor que o computador 1 quanto ao tempo de execução de operações matemáticas.
 
 Os tempos calculados pelo computador 3 foram na ordem de 50% menores do que os outros computadores, no caso de tempo de acesso à memória e tempo de execuçaõ mo processamento gráfico.
 Já em relação ao acesso ao disco o tempo do computador 3 foi 1/3 do tempo comparando com o com 1 e 1/4 do tempo comparando com o computador 2.
 Nesse último caso, o computador 1 foi mais rápido que o computador 2 na média, porém como teve um desvio padrão muito maior mostra que o computador 1 é muito mais inconsistente que os outros.
+
+####Grupo E
+Ao serem introduzidos, os computadores 5 e 6 são mais rápidos que os computadores 1 até 4 ficando em ordem do mais rápido para o mais lento: 5,6,3,2,1 .
+Isso para os casos da ordenação e do gnuplot.
+Como não foram utilizaods nos outros benchmarks, eles foram desconsiderados nos outros testes.
+
+####Grupo F
+Ao serem introduzidos, somente o computador 7 é mais rápido que os computadores do grupo D e tão rápido quanto os do grupo E.
+Já o computador 8 foi o mais lento entre todos eles, em relação ao tempo de acesso à memória e tempo de execução no processamento gráfico.
+
+###Conclusão
+Pode-se perceber que existe uma grande variação na ordem da velocidade desses computadores quando se muda o tempo observado.
+Dependendo das especificações do computador ele pode ser mais rápido ou mais lento.
