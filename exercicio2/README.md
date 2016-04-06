@@ -154,7 +154,7 @@ Ocorre um aumento a partir do tamanho 64 do bloco de dados da L1.
 
 **Conclusão**
 
-Com essas informações pode-se perceber que a melhor configuração para 301.apsi.m2b em
+Com essas informações pode-se perceber que a melhor configuração para 164.gzip.m2b em
 relação a cache L1 é: l1-isize 64k l1-dsize 512k l1-ibsize 64 l1-dbsize 64
 
 **l1-icache** 
@@ -170,7 +170,6 @@ relação a cache L1 é: l1-isize 64k l1-dsize 512k l1-ibsize 64 l1-dbsize 64
 | ---- | ----- | ------ | ---- | ---- | ----- | ----- |
 | Demand misses | 137910 | 0 | 137910 | 86615 | 51295 | 0 |
 | Demand misses rate | 0.0007 | 0.0000 | 0.0007 | 0.0006 | 0.0011 | 0.0000 |
-
 
 ###172.mgrid.m2b 
 
@@ -188,39 +187,68 @@ Demand misses rate | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000
 
 Type | Total | Instrn | Data | Read | Write | Misc
 ---- | ----- | ------ | ---- | ---- | ----- | -----
-demand misses | 24498691 | 0 | 24498691 | 21117670 | 3381021 | 0
-demand misses rate | 0.1142 | 0.0000 | 0.1142 | 0.1159 | 0.1044 | 0.0000
+Demand misses | 24498691 | 0 | 24498691 | 21117670 | 3381021 | 0
+Demand misses rate | 0.1142 | 0.0000 | 0.1142 | 0.1159 | 0.1044 | 0.0000
 
 ####-maxtrace 30 -l1-isize nK -l1-dsize 16K -l1-ibsize 32 -l1-dbsize 32
 
 | n | Demand misses total | Demand misses rate total |
 |---- | ----- | ------ |
-|Demand misses | 8596 | 8596 | 0 | 0 | 0 | 0 
-Demand misses rate | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 
+| 32 | 8596 | 0.0000 |
+
+O valor de 16k já é ideal, pois já obtinha um _miss rate_ de 0.0000
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize n -l1-dbsize 32
 
 | n | Demand misses total | Demand misses rate total |
 |---- | ----- | ------ |
-|Demand misses | 11926 | 11926 | 0 | 0 | 0 | 0 
-Demand misses rate | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 
+| 64 | 11926 | 0.0000 |
+
+O valor de 32 já é ideal, pois já obtinha um _miss rate_ de 0.0000.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize nK -l1-ibsize 32 -l1-dbsize 32
 
 | n | Demand misses total | Demand misses rate total |
 |---- | ----- | ------ |
-|Demand misses | 23450401 | 0 | 23450401 | 20251739 | 3198662 | 0
-Demand misses rate | 0.1093 | 0.0000 | 0.1093 | 0.1112 | 0.0988 | 0.0000
+| 32k | 23450401 | 0.1093 |
+| 64k | 22938863 | 0.1069 |
+| 128k | 15582577 | 0.0726 |
+| 256k | 15399726 | 0.0718 |
+| 512k | 12765831 | 0.0595 |
+| 1M | 12679372 | 0.0591 |
+
+Acima do valor de 512k, a diferença é mínima.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize 32 -l1-dbsize n
 
 | n | Demand misses total | Demand misses rate total |
 |---- | ----- | ------ |
-|Demand misses | 19789230 | 0 | 19789230 | 17885029 | 1904201 | 0
-Demand misses rate | 0.0922 | 0.0000 | 0.0922 | 0.0982 | 0.0588 | 0.0000
+| 64 | 19789230 | 0.0922 |
+| 128 | 18107442 | 0.0844 |
+| 256 | 17791573 | 0.0829 |
+
+Acima de 128, a diferença é desprezível.
+
+**Conclusão**
+
+Com essas informações pode-se perceber que a melhor configuração para 172.mgrid.m2b em
+relação a cache L1 é: l1-isize 16k l1-dsize 512k l1-ibsize 32 l1-dbsize 128
+
+**l1-icache** 
+
+| Type | Total | Instrn | Data | Read | Write | Misc |
+| ---- | ----- | ------ | ---- | ---- | ----- | ----- |
+| Demand misses | 16107 | 16107 | 0 | 0 | 0 | 0 |
+| Demand misses rate | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+
+**l1-dcache**
+
+| Type | Total | Instrn | Data | Read | Write | Misc |
+| ---- | ----- | ------ | ---- | ---- | ----- | ----- |
+| Demand misses | 3381818 | 0 | 2281818 | 2638205 | 743613 | 0 |
+| Demand misses rate | 0.0158 | 0.0000 | 0.0158 | 0.0145 | 0.0230 | 0.0000 |
 
 ###181.mcf.m2b 
-
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize 32 -l1-dbsize 32 (base)
 
@@ -242,27 +270,60 @@ Demand misses rate | 0.5378 | 0.0000 | 0.5378 | 0.5689 | 0.2210 | 0.0000
 
 | n | Demand misses total | Demand misses rate total |
 |---- | ----- | ------ |
-Demand misses | 271 | 271 | 0 | 0 | 0 | 0 
-Demand misses rate | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 
+| 32k | 271 | 0.0000 |
+
+Já com o valor 16k, o _miss rate_ é 0.0000.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize n -l1-dbsize 32
 
 | n | Demand misses total | Demand misses rate total |
 |---- | ----- | ------ |
-|Demand misses | 167 | 167 | 0 | 0 | 0 | 0 
-Demand misses rate | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 
+| 64 | 167 | 0.0000 |
+
+Já com o valor 32, o _miss rate_ é 0.0000.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize nK -l1-ibsize 32 -l1-dbsize 32
 
 | n | Demand misses total | Demand misses rate total |
 |---- | ----- | ------ |
-|Demand misses | 112619007 | 0 | 112619007 | 108574063 | 4044944 | 0
-Demand misses rate | 0.5333 | 0.0000 | 0.5333 | 0.5647 | 0.2138 | 0.0000
+| 32k | 112619007 | 0.5333 |
+| 64k | 111559002 | 0.5283 |
+| 128k | 110625983 | 0.5239 |
+| 256k | 109918752 | 0.5205 |
+
+Acima de 128k, a diferença é muito pequena para influenciar. 
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize 32 -l1-dbsize n
 
 | n | Demand misses total | Demand misses rate total |
 |---- | ----- | ------ |
-|Demand misses | 113562804 | 0 | 113562804 | 109382166 | 4180638 | 0
-Demand misses rate | 0.5378 | 0.0000 | 0.5378 | 0.5689 | 0.2210 | 0.0000
+| 64 | 113562804 | 0.5378 |
+| 128 | 64411851 | 0.3050 |
+| 256 | 45913709 | 0.2174 |
+| 512 | 32623848 | 0.1545 |
+| 1k | 28372656 | 0.1344 |
+| 2k | 32570562 | 0.1542 |
+
+Acima de 1k, o valor de _miss rate_ aumenta.
+
+**Conclusão**
+
+Com essas informações pode-se perceber que a melhor configuração para 181.mgrid.m2b em
+relação a cache L1 é: l1-isize 16k l1-dsize 128k l1-ibsize 32 l1-dbsize 1k
+
+**l1-icache** 
+
+| Type | Total | Instrn | Data | Read | Write | Misc |
+| ---- | ----- | ------ | ---- | ---- | ----- | ----- |
+| Demand misses | 284 | 284 | 0 | 0 | 0 | 0 |
+| Demand misses rate | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
+
+**l1-dcache**
+
+| Type | Total | Instrn | Data | Read | Write | Misc |
+| ---- | ----- | ------ | ---- | ---- | ----- | ----- |
+| Demand misses | 21081446 | 0 | 2108144 | 20795786 | 285660 | 0 |
+| Demand misses rate | 0.0998 | 0.0000 | 0.0998 | 0.1082 | 0.0151 | 0.0000 |
+
+![Gráfico: Miss Rate x Traces](~/Documents/grafico.png)
 
