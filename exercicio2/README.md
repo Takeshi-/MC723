@@ -4,6 +4,11 @@
  
 Foram simulados 4 programas com um nível de cache.
 
+ 1. 301.apsi.m2b
+ 2. 164.gzip.m2b
+ 3. 172.mgrid.m2b
+ 4. 181.mcf.m2b 
+
 Ao simular, foram setados 3 dos 4 valores para verificação da melhor configuração.
 E como ao mudar os valores da L1 de instruções isso nãoaltera a L1 de dados, só será representado
 os dados variantes.
@@ -325,5 +330,10 @@ relação a cache L1 é: l1-isize 16k l1-dsize 128k l1-ibsize 32 l1-dbsize 1k
 | Demand misses | 21081446 | 0 | 2108144 | 20795786 | 285660 | 0 |
 | Demand misses rate | 0.0998 | 0.0000 | 0.0998 | 0.1082 | 0.0151 | 0.0000 |
 
-![Gráfico: Miss Rate x Traces](/grafico.png)
+###Conclusão
+
+Em relação as caches de instrução apenas o 30.apsi.m2b teve valor de _miss rate_ acima de 0 (0.0005).
+Já em relação as caches de dados ela foi a melhor com a melhor configuração. 
+
+![Gráfico: Miss Rate x Traces](https://github.com/Takeshi-/MC723/blob/master/exercicio2/grafico.png)
 
