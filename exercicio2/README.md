@@ -325,5 +325,5 @@ relação a cache L1 é: l1-isize 16k l1-dsize 128k l1-ibsize 32 l1-dbsize 1k
 | Demand misses | 21081446 | 0 | 2108144 | 20795786 | 285660 | 0 |
 | Demand misses rate | 0.0998 | 0.0000 | 0.0998 | 0.1082 | 0.0151 | 0.0000 |
 
-![Gráfico: Miss Rate x Traces](~ra145539/Documents/grafico.png)
+![Gráfico: Miss Rate x Traces]()
 
