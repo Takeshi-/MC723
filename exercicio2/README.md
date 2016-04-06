@@ -333,7 +333,7 @@ relação a cache L1 é: l1-isize 16k l1-dsize 128k l1-ibsize 32 l1-dbsize 1k
 ###Conclusão
 
 Em relação as caches de instrução apenas o 30.apsi.m2b teve valor de _miss rate_ acima de 0 (0.0005).
-Já em relação as caches de dados, 14.gzip.m2b foi a melhor com a melhor configuração. 
+Já em relação as caches de dados, 164.gzip.m2b foi a melhor com a melhor configuração. 
 
 ![Gráfico: Miss Rate x Traces](https://github.com/Takeshi-/MC723/blob/master/exercicio2/grafico.png)
 
