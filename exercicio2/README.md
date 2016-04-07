@@ -33,48 +33,25 @@ os dados variantes.
 
 ####-maxtrace 30 -l1-isize nK -l1-dsize 16K -l1-ibsize 32 -l1-dbsize 32
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ | 
-| 32k | 6122794 | 0.0102 |
-| 64k | 855219 | 0.0014 | 
-| 128k | 855219 | 0.0014 |
+![Gráfico: Miss Rate x L1-isize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/301.apsi.m2b-l1-isize.png)
 
 Acima de 64k no tamanho da L1 de instruções não altera mais.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize n -l1-dbsize 32
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 64 | 6749790 | 0.0112 |
-| 128 | 3897193 | 0.0065 |
-| 256 | 2416469 | 0.0040 |
-| 512 | 1635409 | 0.0027 |
-| 1k | 1235839 | 0.0021 |
-| 2k | 936115 | 0.0016 |
-| 4k | 845315 | 0.0014 |
+![Gráfico: Miss Rate x L1-ibsize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/301.apsi.m2b-l1-ibsize.png)
 
 Valores acima de 2k para o bloco de instruções da L1 começam a fazer pouca diferença.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize nK -l1-ibsize 32 -l1-dbsize 32
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 32k | 6141758 | 0.0272 |
-| 64k | 5345605 | 0.0237 |
-| 128k | 4544528 | 0.0201 |
-| 256k | 3712786 | 0.0164 |
-| 512k | 2111024 | 0.0093 |
-| 1M | 2057389 | 0.0091 |
+![Gráfico: Miss Rate x L1-dsize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/301.apsi.m2b-l1-dsize.png)
 
 Acima de 512k, a mudança é negligível.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize 32 -l1-dbsize n
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 64 | 6727194 | 0.0298 |
-| 128 | 6310419 | 0.0279 |
-| 256 | 8839642 | 0.0391 |
+![Gráfico: Miss Rate x L1-dbsize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/301.apsi.m2b-l1-dbsize.png)
 
 Acima de 128, houve um acréscimo no número de misses na cache L1.
 
@@ -118,42 +95,25 @@ relação a cache L1 é: l1-isize 64k l1-dsize 512k l1-ibsize 2k l1-dbsize 128
 
 ####-maxtrace 30 -l1-isize nK -l1-dsize 16K -l1-ibsize 32 -l1-dbsize 32
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 32k | 8000415 | 0.0133 | 
-| 64k | 284 | 0.0000 |
-| 128k | 284 | 0.0000 |
+![Gráfico: Miss Rate x L1-isize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/164.gzip.m2b-l1-isize.png)
 
-Ocorre uma queda gigantesca no número de misses a partir do valor 64k.
+Ocorre uma queda pequena no número de misses acima do valor 64k.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize n -l1-dbsize 32
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 64 | 5274430 | 0.0088 |
-| 128 | 5273121 | 0.0088 |
+![Gráfico: Miss Rate x L1-ibsize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/164.gzip.m2b-l1-ibsize.png)
 
 Acima de 64, ocorre mudanças muito pequenas.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize nK -l1-ibsize 32 -l1-dbsize 32
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 32k | 7065453 | 0.0361 |
-| 64k | 5464112 | 0.0279 |
-| 128k | 2712809 | 0.0139 |
-| 256k | 777166 | 0.0040 |
-| 512k | 229904 | 0.0012 |
-| 1M | 172185 | 0.0009 |
+![Gráfico: Miss Rate x L1-dsize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/164.gzip.m2b-l1-dsize.png)
 
 Acima de 512k, a diferença começa a ser muito pequena.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize 32 -l1-dbsize n
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 64 | 8329485 | 0.0429 |
-| 128 | 9161289 | 0.0474 |
+![Gráfico: Miss Rate x L1-dbsize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/164.gzip.m2b-l1-dbsize.png)
 
 Ocorre um aumento a partir do tamanho 64 do bloco de dados da L1.
 
@@ -197,40 +157,21 @@ Demand misses rate | 0.1142 | 0.0000 | 0.1142 | 0.1159 | 0.1044 | 0.0000
 
 ####-maxtrace 30 -l1-isize nK -l1-dsize 16K -l1-ibsize 32 -l1-dbsize 32
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 32 | 8596 | 0.0000 |
-
-O valor de 16k já é ideal, pois já obtinha um _miss rate_ de 0.0000
+O valor de 16k já é ideal, pois já possui um _miss rate_ de 0.0000
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize n -l1-dbsize 32
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 64 | 11926 | 0.0000 |
-
-O valor de 32 já é ideal, pois já obtinha um _miss rate_ de 0.0000.
+O valor de 32 já é ideal, pois já possui um _miss rate_ de 0.0000.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize nK -l1-ibsize 32 -l1-dbsize 32
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 32k | 23450401 | 0.1093 |
-| 64k | 22938863 | 0.1069 |
-| 128k | 15582577 | 0.0726 |
-| 256k | 15399726 | 0.0718 |
-| 512k | 12765831 | 0.0595 |
-| 1M | 12679372 | 0.0591 |
+![Gráfico: Miss Rate x L1-dsize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/172.mgrid.m2b-l1-dsize.png)
 
 Acima do valor de 512k, a diferença é mínima.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize 32 -l1-dbsize n
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 64 | 19789230 | 0.0922 |
-| 128 | 18107442 | 0.0844 |
-| 256 | 17791573 | 0.0829 |
+![Gráfico: Miss Rate x L1-dbsize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/172.mgrid.m2b-l1-dbsize.png)
 
 Acima de 128, a diferença é desprezível.
 
@@ -273,41 +214,21 @@ Demand misses rate | 0.5378 | 0.0000 | 0.5378 | 0.5689 | 0.2210 | 0.0000
 
 ####-maxtrace 30 -l1-isize nK -l1-dsize 16K -l1-ibsize 32 -l1-dbsize 32
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 32k | 271 | 0.0000 |
-
 Já com o valor 16k, o _miss rate_ é 0.0000.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize n -l1-dbsize 32
-
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 64 | 167 | 0.0000 |
 
 Já com o valor 32, o _miss rate_ é 0.0000.
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize nK -l1-ibsize 32 -l1-dbsize 32
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 32k | 112619007 | 0.5333 |
-| 64k | 111559002 | 0.5283 |
-| 128k | 110625983 | 0.5239 |
-| 256k | 109918752 | 0.5205 |
+![Gráfico: Miss Rate x L1-dsize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/181.mcf.m2b-l1-dsize.png)
 
 Acima de 128k, a diferença é muito pequena para influenciar. 
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize 32 -l1-dbsize n
 
-| n | Demand misses total | Demand misses rate total |
-|---- | ----- | ------ |
-| 64 | 113562804 | 0.5378 |
-| 128 | 64411851 | 0.3050 |
-| 256 | 45913709 | 0.2174 |
-| 512 | 32623848 | 0.1545 |
-| 1k | 28372656 | 0.1344 |
-| 2k | 32570562 | 0.1542 |
+![Gráfico: Miss Rate x L1-dbsize](https://github.com/Takeshi-/MC723/blob/master/exercicio2/181.mcf.m2b-l1-dbsize.png)
 
 Acima de 1k, o valor de _miss rate_ aumenta.
 
