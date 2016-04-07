@@ -10,8 +10,8 @@ Foram simulados 4 programas com um nível de cache.
  4. 181.mcf.m2b 
 
 Ao simular, foram setados 3 dos 4 valores para verificação da melhor configuração.
-E como ao mudar os valores da L1 de instruções isso nãoaltera a L1 de dados, só será representado
-os dados variantes.
+E como ao mudar os valores da L1 de instruções isso não altera a L1 de dados, 
+só será representado os dados variantes nos gráficos.
  
 ###301.apsi.m2b 
 
@@ -137,7 +137,6 @@ relação a cache L1 é: l1-isize 64k l1-dsize 512k l1-ibsize 64 l1-dbsize 64
 | Demand misses rate | 0.0007 | 0.0000 | 0.0007 | 0.0006 | 0.0011 | 0.0000 |
 
 ###172.mgrid.m2b 
-
 
 ####-maxtrace 30 -l1-isize 16K -l1-dsize 16K -l1-ibsize 32 -l1-dbsize 32 (base)
 
