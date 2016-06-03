@@ -4,15 +4,14 @@ int main()
 {
 	printf("Hello World\n");
 	
-	volatile int* mem = (int *)(100*1024*1024);
+	volatile int* lock = (int *)(100*1024*1024);
+	while(*lock);
+	*lock = 55;
 	
-	while (*mem);
-	
-	*mem = 55;
-	
-	printf("%d\n",*mem);
-	
-	*mem = 0;
+	printf("%d\n",*lock);
+	printf("%d\n",*lock);
+	printf("%d\n",*lock);
+	*lock = 0;
 	
 	return 0;
 }

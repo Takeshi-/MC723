@@ -45,7 +45,7 @@
 /// Namespace to isolate peripheral from ArchC
 using user::ac_tlm_peripheral;
 
-uint32_t lock = 0;
+uint32_t valor = 0;
 
 /// Constructor
 ac_tlm_peripheral::ac_tlm_peripheral( sc_module_name module_name , int k ) :
@@ -68,7 +68,7 @@ ac_tlm_peripheral::~ac_tlm_peripheral() {
 */
 ac_tlm_rsp_status ac_tlm_peripheral::writem( const uint32_t &a , const uint32_t &d )
 {
-	lock = d;
+  valor = d;
   cout << "addr: " <<  std::hex  << a << " data: " << d << endl;
   return SUCCESS;
 }
@@ -81,8 +81,8 @@ ac_tlm_rsp_status ac_tlm_peripheral::writem( const uint32_t &a , const uint32_t 
 */
 ac_tlm_rsp_status ac_tlm_peripheral::readm( const uint32_t &a , uint32_t &d )
 {
-  d = lock;
-  lock = 1;
+  d = valor;
+  valor = 1;
   return SUCCESS;
 }
 
