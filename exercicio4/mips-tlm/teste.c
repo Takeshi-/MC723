@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define NUMEROCORES 2
+#define NUMEROCORES 1
 
 volatile int procCounter = 0;
 volatile int* gLock = (int *)(100*1024*1024);
